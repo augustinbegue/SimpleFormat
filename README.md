@@ -3,14 +3,12 @@
 SimpleTextMd is a web editor.
 It allows you to add some markdown to some web content via a WYSIWYG interface.
 
----
 ## Features
 
 SimpleTextMd includes:
 1. WYSIWYG interface
 2. Simple website implementation
 
----
 ## Formatting
 
 When you write with something with SimpleTextMd WYSIWYG interface, it's generating [Markdown](https://fr.wikipedia.org/wiki/Markdown).
