@@ -2,11 +2,10 @@
 var ishtmlHidden = false;
 var htmlContent = "";
 $(".format").hide();
-document.getElementById('editor').contentEditable='true';
 
 // Head 1 Button
 function head1() {
-  $("#editor").append('<h1 id="selected">Title</h1>');
+  insertHtml('<h1 id="selected">Title</h1>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('head1');
@@ -15,7 +14,7 @@ function head1() {
 
 // Head 2 Button
 function head2() {
-  $("#editor").append('<h3 id="selected">Title 2</h3>');
+  insertHtml('<h3 id="selected">Title 2</h3>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('head2');
@@ -24,7 +23,7 @@ function head2() {
 
 // Bold Button
 function bold() {
-  $("#editor").append('<b id="selected">bold</b>');
+  insertHtml('<b id="selected">bold</b>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('bold');
@@ -33,16 +32,24 @@ function bold() {
 
 // Italic Button
 function italic() {
-  $("#editor").append('<i id="selected">italic</i>');
+  insertHtml('<i id="selected">italic</i>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('italic');
   text();
 }
 
+// Underline button
+function underline() {
+  insertHtml('<u id="selected">underline</u>');
+  SelectText('selected');
+  $('#selected').removeAttr('id');
+  text();
+}
+
 // Code block Button
 function code() {
-  $("#editor").append('<code id="selected">code</code>');
+  insertHtml('<code id="selected">code</code>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('code');
@@ -51,7 +58,7 @@ function code() {
 
 // Quote block Button
 function quote() {
-  $("#editor").append('<blockquote id="selected">quote</blockquote><br>');
+  insertHtml('<blockquote id="selected">quote</blockquote><br>');
   SelectText('selected');
   $('#selected').removeAttr('id');
   console.log('quote');
@@ -62,14 +69,14 @@ function quote() {
 function link() {
   var url = prompt('Url :');
   var title = prompt('Title :');
-  $("#editor").append('<a src="' + url + '">' + title + '</a>');
+  insertHtml('<a src="' + url + '">' + title + '</a>');
 }
 
 // Image Button
 function image() {
   var url = prompt('Url :');
   var alt = prompt('Title :');
-  $("#editor").append('<img src="' + url + '" alt="' + alt + '">');
+  insertHtml('<img src="' + url + '" alt="' + alt + '">');
 }
 
 function divider() {
@@ -124,6 +131,7 @@ function disableButtons() {
   $("#divider").attr("disabled", true);
   $("#link").attr("disabled", true);
   $("#image").attr("disabled", true);
+  $("#underline").attr("disabled", true);
 }
 
 function enableButtons() {
@@ -136,6 +144,7 @@ function enableButtons() {
   $("#divider").attr("disabled", false);
   $("#link").attr("disabled", false);
   $("#image").attr("disabled", false);
+  $("#underline").attr("disabled", false);
 }
 
 function SelectText(element) {
@@ -156,16 +165,33 @@ function SelectText(element) {
  }
 }
 
-function insertTextAtCursor(text) {
-    var sel, range, html;
+function insertHtml(html) {
+    var sel, range;
     if (window.getSelection) {
+
         sel = window.getSelection();
         if (sel.getRangeAt && sel.rangeCount) {
             range = sel.getRangeAt(0);
             range.deleteContents();
-            range.insertNode( document.createTextNode(text) );
+
+            var el = document.createElement("div");
+            el.innerHTML = html;
+            var frag = document.createDocumentFragment(), node, lastNode;
+            while ( (node = el.firstChild) ) {
+                lastNode = frag.appendChild(node);
+            }
+            range.insertNode(frag);
+
+            if (lastNode) {
+                range = range.cloneRange();
+                range.setStartAfter(lastNode);
+                range.collapse(true);
+                sel.removeAllRanges();
+                sel.addRange(range);
+            }
         }
-    } else if (document.selection && document.selection.createRange) {
-        document.selection.createRange().text = text;
+    } else if (document.selection && document.selection.type != "Control") {
+
+        document.selection.createRange().pasteHTML(html);
     }
 }
