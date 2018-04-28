@@ -1,0 +1,17 @@
+#editor {
+  background-color: white;
+  margin: 10px;
+  height: 500px;
+  width: auto;
+}
+
+.html {
+  opacity: 0.5;
+}
+
+code {
+  background-color: #323232 !important;
+  color: white !important;
+  border-radius: 3px;
+  font-family: monospace;
+}

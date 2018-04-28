@@ -35,3 +35,4 @@ With the SimpleFormat, you can do :
   [SimpleFormat](https://github.com/Tagueo/SimpleText)
 
 * Images (Soon) :
+  ![SimpleFormat](https://github.com/Tagueo/SimpleText)
