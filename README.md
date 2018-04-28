@@ -6,7 +6,7 @@ It allows you to add some formatting to some web content via a WYSIWYG interface
 ## Features
 
 SimpleFormat includes:
-1. Intuitive WYSIWYG interface (you can still visualize and edit the html code).
+1. Intuitive WYSIWYG responsive interface (you can still visualize and edit the html code).
 2. Simple website implementation
 3. Out of the box CSS and Icons based on [Bulma](https://bulma.io) & [FontAwesome](https://fontawesome.com/)
 4. Out of the box securities: the tags that can affect your website are automaticaly deleted (soon)
