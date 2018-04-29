@@ -1,0 +1,58 @@
+/* Colors :
+  Dark Gray: #1F1F1F
+  Gray: #595858
+  Light Gray: #E2E2E2
+  Red : #FF0000
+*/
+
+.editor {
+  background-color: #E2E2E2;
+  border-radius: 10px !important;
+}
+
+.editor-toolbar {
+  background-color: #1F1F1F !important;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.editor-body {
+  background-color: #E2E2E2;
+  padding: 10px;
+  border-radius: 10px !important;
+}
+
+.editor-field {
+  background-color: white;
+  margin: 10px;
+  height: 500px;
+  width: auto;
+  overflow: scroll;
+  padding: 20px;
+  border-radius: 5px !important;
+}
+
+
+.toolbar-item {
+  margin: 5px;
+  padding: none;
+  display: block;
+}
+
+code {
+  background-color: #1F1F1F !important;
+  color: white !important;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.is-logo {
+  background-color: #1F1F1F !important;
+}
+
+.is-logo:hover {
+  background-color: #595858 !important;
+}
