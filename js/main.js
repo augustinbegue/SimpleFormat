@@ -70,13 +70,22 @@ function link() {
   var url = prompt('Url :');
   var title = prompt('Title :');
   insertHtml('<a src="' + url + '">' + title + '</a>');
+  text();
 }
 
 // Image Button
 function image() {
   var url = prompt('Url :');
   var alt = prompt('Title :');
-  insertHtml('<img src="' + url + '" alt="' + alt + '">');
+  var width = prompt('Width :');
+  var height = prompt('Height :');
+  if (width === null || undefined) {
+    width = 'auto'
+  }
+  if (height === null || undefined) {
+    height = 'auto'
+  }
+  insertHtml('<img src="' + url + '" alt="' + alt + '" height="' + height + '" width="' + width + '">');
 }
 
 function divider() {

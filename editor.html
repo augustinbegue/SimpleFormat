@@ -12,121 +12,117 @@
   </head>
   <body>
     <div class="toolbar">
-      <div class="columns is-centered is-multiline">
-        <div class="column">
-          <div class="columns is-mobile">
-            <div class="column">
-              <a class="button is-dark" href="https://github.com/Tagueo/SimpleFormat" target="_blank">
-                <span class="icon">
-                  <img src="img/SimpleFormat_Logo_Light.png">
-                </span>
-                <span class="is-hidden-touch">
-                  <p class="title has-text-weight-bold has-text-white">SimpleFormat</p>
-                </span>
-              </a>
-            </div>
-            <div class="column">
-              <div class="buttons">
-                <button type="button" class="button" onclick="trash()">
-                  <span class="icon">
-                    <i class="fas fa-trash"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="hidehtml()" id="htmlButton">
-                  <span class="icon">
-                    <i class="fas fa-terminal"></i>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
+      <div class="toolbar-item">
+        <a class="button is-dark" href="https://github.com/Tagueo/SimpleFormat" target="_blank">
+          <span class="icon">
+            <img src="img/SimpleFormat_Logo_Light.png">
+          </span>
+          <span class="is-hidden-touch">
+            <p class="title has-text-weight-bold has-text-white">SimpleFormat</p>
+          </span>
+        </a>
+      </div>
+      <div class="toolbar-item">
+        <div class="buttons has-addons">
+          <button type="button" class="button" onclick="trash()">
+            <span class="icon">
+              <i class="fas fa-trash"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="hidehtml()" id="htmlButton">
+            <span class="icon">
+              <i class="fas fa-terminal"></i>
+            </span>
+          </button>
         </div>
-        <div class="column">
-          <div class="columns">
-            <div class="column">
-              <div class="buttons">
-                <button type="button" class="button" onclick="head1()" id="head1">
-                  <span class="icon">
-                    <i class="fas fa-heading"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="head2()" id="head2">
-                  <span class="icon">
-                    <i class="fas fa-text-height"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="bold()" id="bold">
-                  <span class="icon">
-                    <i class="fas fa-bold"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="italic()" id="italic">
-                  <span class="icon">
-                    <i class="fas fa-italic"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="underline()" id="underline">
-                  <span class="icon">
-                    <i class="fas fa-underline"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="code()" id="code">
-                  <span class="icon">
-                    <i class="fas fa-code"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="quote()" id="quote">
-                  <span class="icon">
-                    <i class="fas fa-quote-left"></i>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div class="column">
-              <div class="buttons">
-                <button type="button" class="button" onclick="link()" id="link">
-                  <span class="icon">
-                    <i class="fas fa-paperclip"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="image()" id="image">
-                  <span class="icon">
-                    <i class="fas fa-image"></i>
-                  </span>
-                </button>
-                <button type="button" class="button" onclick="divider()" id="divider">
-                  <span class="icon">
-                    <i class="fas fa-minus"></i>
-                  </span>
-                </button>
-                <button type="button" class="button">
-                  <span class="icon">
-                    <i class="fas fa-list-ol"></i>
-                  </span>
-                </button>
-                <button type="button" class="button">
-                  <span class="icon">
-                    <i class="fas fa-list-ul"></i>
-                  </span>
-                </button>
-                <button type="button" class="button">
-                  <span class="icon">
-                    <i class="fas fa-tasks"></i>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="toolbar-item">
+        <div class="buttons has-addons">
+          <button type="button" class="button" onclick="head1()" id="head1">
+            <span class="icon">
+              <i class="fas fa-heading"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="head2()" id="head2">
+            <span class="icon">
+              <i class="fas fa-text-height"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="toolbar-item">
+        <div class="buttons has-addons">
+          <button type="button" class="button" onclick="bold()" id="bold">
+            <span class="icon">
+              <i class="fas fa-bold"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="italic()" id="italic">
+            <span class="icon">
+              <i class="fas fa-italic"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="underline()" id="underline">
+            <span class="icon">
+              <i class="fas fa-underline"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="code()" id="code">
+            <span class="icon">
+              <i class="fas fa-code"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="quote()" id="quote">
+            <span class="icon">
+              <i class="fas fa-quote-left"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="toolbar-item">
+        <div class="buttons has-addons">
+          <button type="button" class="button" onclick="link()" id="link">
+            <span class="icon">
+              <i class="fas fa-paperclip"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="image()" id="image">
+            <span class="icon">
+              <i class="fas fa-image"></i>
+            </span>
+          </button>
+          <button type="button" class="button" onclick="divider()" id="divider">
+            <span class="icon">
+              <i class="fas fa-minus"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="toolbar-item">
+        <div class="buttons has-addons">
+          <button type="button" class="button">
+            <span class="icon">
+              <i class="fas fa-list-ol"></i>
+            </span>
+          </button>
+          <button type="button" class="button">
+            <span class="icon">
+              <i class="fas fa-list-ul"></i>
+            </span>
+          </button>
+          <button type="button" class="button">
+            <span class="icon">
+              <i class="fas fa-tasks"></i>
+            </span>
+          </button>
         </div>
       </div>
     </div>
-    <article class="message">
-      <div class="message-body">
-        <div id="editor" class="content" style="padding: 20px;" contenteditable="true">
+    <div class="notification is-light">
+      <div id="editor" class="content" style="padding: 20px;" contenteditable="true">
 
-        </div>
       </div>
-    </article>
+    </div>
     <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
