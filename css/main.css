@@ -23,6 +23,7 @@ code {
   padding: 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .toolbar-item {
