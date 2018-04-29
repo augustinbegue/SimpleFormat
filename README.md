@@ -23,9 +23,9 @@ Include the editor in a div. You can give it any size you want, it's fully respo
 </div>
 ```
 ```php
-  <?php
-    require 'editor.html';
-  ?>
+<?php
+  require 'editor.html';
+?>
 ```
 
 To get the html code of the editor juste do :
