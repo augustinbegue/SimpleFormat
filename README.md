@@ -17,12 +17,15 @@ SimpleFormat uses [HTML5](https://fr.wikipedia.org/wiki/HTML5). Just download it
 
 Include the editor in a div. You can give it any size you want, it's fully responsive.
 
-```php
+```html
 <div style="width: 700px; height: 400px;">
+  <!-- include the editor here -->
+</div>
+```
+```php
   <?php
     require 'editor.html';
   ?>
-</div>
 ```
 
 To get the html code of the editor juste do :
