@@ -69,7 +69,7 @@ function quote() {
 function link() {
   var url = prompt('Url :');
   var title = prompt('Title :');
-  insertHtml('<a src="' + url + '">' + title + '</a>');
+  insertHtml('<a href="' + url + '">' + title + '</a>');
   text();
 }
 
