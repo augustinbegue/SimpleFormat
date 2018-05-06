@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SimpleFormat - The simple web editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <link rel="stylesheet" href="css/editor.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/SimpleFormat_Logo_Light.png">
+    <style media="screen">
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      section {
+        padding: 20px 0;
+      }
+      .container {
+        margin: 0 auto;
+        position: relative;
+      }
+      .hero-foot {
+        left: 0;
+        right; 0;
+        top: 200px;
+        display: block;
+        width: 100%;
+        padding: 4px 0;
+        height: 60px;
+        z-index: 100;
+      }
+      .fixed {
+        position: fixed;
+        top: 0
+      }
+      .tabs.fixed {
+        width: 100%;
+        background: hsl(0, 0%, 21%);
+        padding: 5px;
+      }
+      .footer {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hero is-dark">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title is-1"><span class="icon is-medium"><img src="img/SimpleFormat_Logo_Light.png" alt="Simple Format Logo"></span>&nbsp;SimpleFormat</h1>
+            <h1 class="subtitle is-5">SimpleFormat is a WYSIWYG web editor. It allows you to let the users of your website to add some formatting to the content they write.</h1>
+          </div>
+        </div>
+        <div class="hero-foot">
+          <div class="tabs is-centered is-boxed is-medium is-toggle">
+            <ul>
+              <li><a href="#" data-scroll="about"><i class="fas fa-question-circle"></i>&nbsp;About</a></li>
+              <li><a href="#" data-scroll="tryme"><i class="fas fa-edit"></i>&nbsp;Try Me !</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <section id="about" data-anchor="about">
+        <div class="content">
+          <h1 class="title is-1"><span class="icon is-medium"><img src="img/SimpleFormat_Logo.png" alt="Simple Format Logo"></span>&nbsp;About</h1>
+          <hr>
+          <h2>Features</h2>
+          <p>SimpleFormat includes:</p>
+          <ol>
+            <li>An intuitive WYSIWYG responsive interface. (The user can still write in html)</li>
+            <li>A simple website implementation.</li>
+            <li>Out of the box CSS and Icons based on <a href="https://bulma.io" rel="nofollow">Bulma</a> &amp; <a href="https://fontawesome.com/" rel="nofollow">FontAwesome</a>.</li>
+            <li>[Soon] Out of the box securities: the tags that can affect your website are automaticaly deleted (<code>&lt;iframe&gt;</code>, <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code>).</li>
+          </ol>
+          <h2>Usage</h2>
+          <p>SimpleFormat uses <a href="https://fr.wikipedia.org/wiki/HTML5" rel="nofollow">HTML5</a>. Just download it and include it in your website !</p>
+          <p>Include the editor in a div. You can give it any size you want, it's fully responsive.</p>
+          <p>You can easily get the output of the editor with javascript.</p>
+          <p>You are free to use SimpleFormat in all of your websites as long as you let the logo and the link in the editor !</p>
+          <h2>WYSIWYG editor</h2>
+          <p>When you write with something with SimpleFormat WYSIWYG interface, it's generating <a href="https://fr.wikipedia.org/wiki/HTML5" rel="nofollow">HTML5</a> code.</p>
+          <p>With the SimpleFormat editor, you can have :</p>
+          <ul>
+          <li>Headings</li>
+          <li>Font sizes / types</li>
+          <li>Text attributes: <em>italic</em>, <strong>bold</strong>, <code>monospace</code>, <u>underline</u></li>
+          <li>Horizontal dividers</li>
+          <li>Lists</li>
+          <li>Links</li>
+          <li>Images</li>
+          </ul>
+          <h2>CSS Icons</h2>
+          <p>SimpleFormat uses <a href="https://bulma.io" rel="nofollow">Bulma</a> for the CSS, in addition to some custom classes. You can found and customize all of them in the <code>main.css</code> file. You will also find a list of the colors used in the CSS file, so you will be able to change them easily.</p>
+          <p>SimpleFormat is using the free icons of <a href="https://fontawesome.com/" rel="nofollow">FontAwesome</a>. You're free to change them as well.</p>
+        </div>
+      </section>
+      <section id="tryme" data-anchor="tryme">
+        <div class="container">
+          <h1 class="title is-1"><span class="icon is-medium"><img src="img/SimpleFormat_Logo.png" alt="Simple Format Logo"></span>&nbsp;Try Me !</h1>
+          <hr>
+          <div class="columns">
+            <div class="column is-7">
+              <div class="editor">
+                <div class="editor-toolbar">
+                  <div class="toolbar-item">
+                    <a class="button is-dark is-logo" href="https://github.com/Tagueo/SimpleFormat" target="_blank" style="background-color: #1F1F1F">
+                      <span class="icon">
+                        <img src="img/SimpleFormat_Logo_Light.png">
+                      </span>
+                      <span class="is-hidden-touch">
+                        <p class="title is-4 grahas-text-weight-bold has-text-white">SimpleFormat</p>
+                      </span>
+                    </a>
+                  </div>
+                  <div class="toolbar-item">
+                    <div class="buttons has-addons">
+                      <button type="button" class="button" onclick="trash()">
+                        <span class="icon">
+                          <i class="fas fa-trash"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="hidehtml()" id="htmlButton">
+                        <span class="icon">
+                          <i class="fas fa-terminal"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="toolbar-item">
+                    <div class="buttons has-addons">
+                      <button type="button" class="button" onclick="head1()" id="head1">
+                        <span class="icon">
+                          <i class="fas fa-heading"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="head2()" id="head2">
+                        <span class="icon">
+                          <i class="fas fa-text-height"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="toolbar-item">
+                    <div class="buttons has-addons">
+                      <button type="button" class="button" onclick="bold()" id="bold">
+                        <span class="icon">
+                          <i class="fas fa-bold"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="italic()" id="italic">
+                        <span class="icon">
+                          <i class="fas fa-italic"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="underline()" id="underline">
+                        <span class="icon">
+                          <i class="fas fa-underline"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="code()" id="code">
+                        <span class="icon">
+                          <i class="fas fa-code"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="quote()" id="quote">
+                        <span class="icon">
+                          <i class="fas fa-quote-left"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="toolbar-item">
+                    <div class="buttons has-addons">
+                      <button type="button" class="button" onclick="link()" id="link">
+                        <span class="icon">
+                          <i class="fas fa-paperclip"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="image()" id="image">
+                        <span class="icon">
+                          <i class="fas fa-image"></i>
+                        </span>
+                      </button>
+                      <button type="button" class="button" onclick="divider()" id="divider">
+                        <span class="icon">
+                          <i class="fas fa-minus"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="editor-body">
+                  <div id="editor" class="editor-field content" contenteditable="true">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box" style="height: 100%">
+                <div class="level">
+                  <div class="level-left">
+                    <div class="level-item">
+                      <button type="button" class="button is-dark" onclick="refreshOutput()">Refresh</button>
+                    </div>
+                  </div>
+                  <div class="level-item">
+                    <p class="title is-4">Editor output</p>
+                  </div>
+                </div>
+                <div class="content" id="editorOutput">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="container has-text-centered">
+        <p><strong>SimpleFormat</strong> - Created by <a href="https://github.com/Tagueo">Tagueo</a></p>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      function refreshOutput() {
+        var output = document.getElementById("editor").innerHTML;
+        document.getElementById("editorOutput").innerHTML = output;
+      }
+    </script>
+    <script type="text/javascript">
+      $('header div div ul li a').on('click', function() {
+        var scrollAnchor = $(this).attr('data-scroll'),
+          scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+          $('body,html').animate({
+            scrollTop: scrollPoint
+          }, 500);
+          return false;
+        })
+        $(window).scroll(function() {
+          var windscroll = $(window).scrollTop();
+      if (windscroll >= 100) {
+          $('.tabs').addClass('fixed');
+          $('.container section').each(function(i) {
+              if ($(this).position().top <= windscroll - 20) {
+                $('header div div ul li.is-active').removeClass('is-active');
+                $('header div div ul li').eq(i).addClass('is-active');
+            }
+        });
+        } else {
+          $('.tabs').removeClass('fixed');
+          $('header div div ul li.is-active').removeClass('is-active');
+          $('header div div ul li:first').addClass('is-active');
+        }
+      }).scroll();
+    </script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
