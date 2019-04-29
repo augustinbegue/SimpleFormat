@@ -38,7 +38,7 @@ You are free to use SimpleFormat in all of your websites as long as you let the 
 
 ## WYSIWYG editor
 
-When you write with something with SimpleFormat WYSIWYG interface, it's generating [HTML5](https://fr.wikipedia.org/wiki/HTML5) code.
+When you write something with SimpleFormat WYSIWYG interface, it's generating [HTML5](https://fr.wikipedia.org/wiki/HTML5) code.
 
 With the SimpleFormat editor, you can have :
 
